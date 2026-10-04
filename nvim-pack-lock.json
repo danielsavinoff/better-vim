@@ -20,6 +20,10 @@
       "rev": "63dd10c9b9a159fd6cfe08435d9606384ff103c5",
       "src": "https://github.com/rmagatti/logger.nvim"
     },
+    "lualine.nvim": {
+      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
     "lush.nvim": {
       "rev": "9c60ec2279d62487d942ce095e49006af28eed6e",
       "src": "https://github.com/rktjmp/lush.nvim"
