@@ -16,6 +16,7 @@ require("plugins/mason_lspconfig")
 require("plugins/theme_hub")
 require("plugins/nvim_autopairs")
 require("plugins/lualine")
+require("plugins/yanky")
 require("netrw_session")
 
 require("options")

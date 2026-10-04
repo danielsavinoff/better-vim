@@ -100,6 +100,10 @@
     "whisk.nvim": {
       "rev": "a5d122ed7c08dcb8366ddc58b44df9458a263d23",
       "src": "https://github.com/josstei/whisk.nvim"
+    },
+    "yanky.nvim": {
+      "rev": "4b4ddd196526fd3d6fd091d931810f9743e936d3",
+      "src": "https://github.com/gbprod/yanky.nvim"
     }
   }
 }
