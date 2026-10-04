@@ -44,6 +44,10 @@
       "rev": "10fc361835c856ba4233ef5ea135b919bf3dce97",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
+    "nvim-autopairs": {
+      "rev": "430522f95fe4fb7c511ec64f8c1a90cc6a66c05c",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
     "nvim-lspconfig": {
       "rev": "ac9d2f7c4757db6320cab6697fe73e5e8adb2457",
       "src": "https://github.com/neovim/nvim-lspconfig"

@@ -14,6 +14,7 @@ require("plugins/nvim_lspconfig")
 require("plugins/lua_ls")
 require("plugins/mason_lspconfig")
 require("plugins/theme_hub")
+require("plugins/nvim_autopairs")
 require("netrw_session")
 
 require("options")
