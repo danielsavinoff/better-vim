@@ -17,7 +17,7 @@ require("plugins/theme_hub")
 require("plugins/nvim_autopairs")
 require("plugins/lualine")
 require("plugins/yanky")
-require("netrw_session")
+require("plugins/resession")
 
 require("options")
 require("tree")

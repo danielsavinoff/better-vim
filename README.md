@@ -13,7 +13,9 @@ A Neovim config aimed at providing a better Neovim experience.
 
 ## ✨ Features
 
-- Restores the previous session, including the open file and netrw cursor position.
+- Uses resession.nvim to restore project files, splits, tabs, and cursor positions.
+- Restores netrw's expanded folders and selection within the project tree.
+- Sessions use the Git root when available, otherwise the opened directory.
 - Sticks to Neovim and plugin defaults where possible.
 
 ## 🚀 Installation
