@@ -106,13 +106,13 @@
       "rev": "51d63f6c4918aadb3b9f92fd818cc68fa0ea9706",
       "src": "https://github.com/raulcorreia7/theme-browser.nvim"
     },
-    "theme-hub.nvim": {
-      "rev": "0553b321257b1bfdd409d3644d7af2399127ee3e",
-      "src": "https://github.com/Erl-koenig/theme-hub.nvim"
-    },
     "tiny-inline-diagnostic.nvim": {
       "rev": "6264451f14119d63a52580e5198d6baf8518b0b2",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
+    "vercel.nvim": {
+      "rev": "7551ac6af9afbb9f78c8edd8599fbfad0956952a",
+      "src": "https://github.com/tiesen243/vercel.nvim"
     },
     "whisk.nvim": {
       "rev": "a5d122ed7c08dcb8366ddc58b44df9458a263d23",

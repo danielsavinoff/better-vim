@@ -1,2 +1,3 @@
--- Theme Hub restores a saved selection after this startup default.
-vim.cmd.colorscheme("github_dark_high_contrast")
+vim.cmd.colorscheme("vercel")
+
+vim.highlight.priorities.semantic_tokens = 95
