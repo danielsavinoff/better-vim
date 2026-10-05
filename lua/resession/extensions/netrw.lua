@@ -10,19 +10,35 @@ end
 function M.config(opts)
   project_root = opts and opts.root and normalize(opts.root) or nil
 
-  -- Netrw's default R mapping captures the last browsed directory. Resolve the
+  -- Netrw's rename/delete mappings capture the last browsed directory. Resolve the
   -- selected entry's parent each time instead; UserMaps survives tree refreshes.
-  vim.g.Netrw_UserMaps = { { "R", "NetrwTreeRename" } }
+  vim.g.Netrw_UserMaps = {
+    { "R", "NetrwTreeRename" },
+    { "D", "NetrwTreeDelete" },
+    { "<Del>", "NetrwTreeDelete" },
+  }
   vim.cmd([[
   function! NetrwTreeRename(islocal) abort
+    return NetrwTreeModify(a:islocal, 'NetrwLocalRename', 'NetrwRemoteRename')
+  endfunction
+
+  function! NetrwTreeDelete(islocal) abort
+    return NetrwTreeModify(a:islocal, 'NetrwLocalRm', 'NetrwRemoteRm')
+  endfunction
+
+  function! NetrwTreeModify(islocal, local_action, remote_action) abort
     if !a:islocal
       let user = netrw#Expose('user')
       let host = (user == '' ? '' : user.'@').netrw#Expose('machine')
-      call netrw#Call('NetrwRemoteRename', host, netrw#Expose('path'))
+      call netrw#Call(a:remote_action, host, netrw#Expose('path'))
       return ''
     endif
 
     if line('.') < get(w:, 'netrw_bannercnt', 1)
+      return ''
+    endif
+    " The tree heading names the browse root, not a child entry.
+    if get(w:, 'netrw_liststyle', 0) == 3 && line('.') < get(w:, 'netrw_bannercnt', 1) + 2
       return ''
     endif
     let word = netrw#Call('NetrwGetWord')
@@ -39,7 +55,7 @@ function M.config(opts)
       endif
     endif
 
-    " Remove expanded descendants before netrw refreshes a renamed directory.
+    " Remove expanded descendants before netrw refreshes a changed directory.
     let expanded = {}
     let selected = substitute(netrw#fs#ComposePath(directory, word), '/$', '', '')
     if get(w:, 'netrw_liststyle', 0) == 3 && isdirectory(selected)
@@ -50,16 +66,19 @@ function M.config(opts)
       endfor
     endif
 
-    " Refresh the selected entry's parent after renaming, including directories.
+    " Use the selected entry's parent for the operation and native refresh.
     let b:netrw_curdir = directory
-    call netrw#Call('NetrwLocalRename', directory)
-    " Keep expansion state when the prompt is cancelled or the rename fails.
-    if !empty(expanded) && isdirectory(selected)
-      let view = winsaveview()
-      call extend(w:netrw_treedict, expanded)
-      call netrw#LocalBrowseCheck(directory)
-      call winrestview(view)
-    endif
+    try
+      call netrw#Call(a:local_action, directory)
+    finally
+      " Keep expansion state when the prompt is cancelled or the action fails.
+      if !empty(expanded) && isdirectory(selected)
+        let view = winsaveview()
+        call extend(w:netrw_treedict, expanded)
+        call netrw#LocalBrowseCheck(directory)
+        call winrestview(view)
+      endif
+    endtry
     return ''
   endfunction
   ]])

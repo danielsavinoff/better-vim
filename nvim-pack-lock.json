@@ -1,5 +1,14 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
+    },
+    "conform.nvim": {
+      "rev": "016802de402556da54c36bd7359b441266b01cdd",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
     "github-nvim-theme": {
       "rev": "c106c9472154d6b2c74b74565616b877ae8ed31d",
       "src": "https://github.com/projekt0n/github-nvim-theme"
@@ -100,6 +109,10 @@
     "theme-hub.nvim": {
       "rev": "0553b321257b1bfdd409d3644d7af2399127ee3e",
       "src": "https://github.com/Erl-koenig/theme-hub.nvim"
+    },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "6264451f14119d63a52580e5198d6baf8518b0b2",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
     },
     "whisk.nvim": {
       "rev": "a5d122ed7c08dcb8366ddc58b44df9458a263d23",
