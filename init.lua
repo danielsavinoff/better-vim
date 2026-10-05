@@ -21,6 +21,7 @@ require("plugins/lualine")
 require("plugins/yanky")
 require("plugins/resession")
 require("plugins/conform")
+require("plugins/codesnap")
 
 require("editor")
 require("colorscheme")

@@ -5,6 +5,11 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
+    "codesnap.nvim": {
+      "rev": "8e1d1339f6d5ca994841698a6dde3608dd5e2ad1",
+      "src": "https://github.com/mistricky/codesnap.nvim",
+      "version": "'v2.0.5'"
+    },
     "conform.nvim": {
       "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
