@@ -2,7 +2,7 @@
 
 A Neovim config aimed at providing a better Neovim experience.
 
-[Watch the Neovim walkthrough](assets/nvim-walkthrough.mp4)
+![Neovim walkthrough](assets/nvim-walkthrough.gif)
 
 ## 🛠️ Requirements
 
