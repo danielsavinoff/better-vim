@@ -1,7 +1,5 @@
 <h1 align="center">BetterVim</h1>
 
-A Neovim config aimed at providing a better Neovim experience.
-
 ![Neovim walkthrough](assets/nvim-walkthrough.gif)
 
 ## ✨ Features
